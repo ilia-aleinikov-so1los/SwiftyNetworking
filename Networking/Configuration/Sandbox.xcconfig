@@ -1,0 +1,8 @@
+//
+//  Sandbox.xcconfig
+//  Networking
+//
+//  Created by slip_def on 07-07-2025.
+//
+
+API_BASE_URL = https:\/\/jsonplaceholder.typicode.com\/
