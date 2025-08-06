@@ -31,7 +31,7 @@ extension ViewModel {
             let response = try await apiClient.dataTask(with: resource)
             userList = response
         } catch {
-            print(error)
+            dump(error)
         }
     }
     
@@ -43,7 +43,7 @@ extension ViewModel {
             let response = try await apiClient.dataTask(with: resource)
             user = response
         } catch {
-            print(error)
+            dump(error)
         }
     }
 }
@@ -58,7 +58,7 @@ extension ViewModel {
             let response = try await apiClient.dataTask(with: resource)
             comments = response
         } catch {
-            print(error)
+            dump(error)
         }
     }
 }
@@ -79,7 +79,7 @@ extension ViewModel {
             let _ = try await apiClient.dataTask(with: resource)
             postBody = post.body
         } catch {
-            print(error)
+            dump(error)
         }
     }
 }

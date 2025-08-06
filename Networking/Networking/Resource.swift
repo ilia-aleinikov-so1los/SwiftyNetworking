@@ -16,14 +16,7 @@ struct Resource<Response, Request: Requestable> {
 extension Resource where Response: Decodable {
     init(request: Request) {
         self.init(request: request) { data in
-            do {
-                return try JSONDecoder.snakeCaseConverting.decode(
-                    Response.self,
-                    from: data
-                )
-            } catch {
-                throw error
-            }
+            return try JSONDecoder.snakeCaseConverting.decode(Response.self, from: data)
         }
     }
 }

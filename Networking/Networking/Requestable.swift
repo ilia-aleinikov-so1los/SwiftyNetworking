@@ -30,15 +30,14 @@ extension Requestable {
 // MARK: - Full URL
 extension Requestable {
     func fullURL(baseURL: URL) -> URL? {
-        guard let url = URL(
-                string: path, relativeTo: baseURL
-              ),
-              var urlComponents = URLComponents(
-                url: url, resolvingAgainstBaseURL: true
-              )
+        guard let url = URL(string: path, relativeTo: baseURL),
+              var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
         else { return nil }
-        
-        if !parameters.isEmpty { urlComponents.queryItems = parameters }
+
+        if !parameters.isEmpty {
+            urlComponents.queryItems = parameters
+        }
+
         return urlComponents.url
     }
 }
